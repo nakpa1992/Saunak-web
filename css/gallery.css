@@ -1,0 +1,165 @@
+body {
+  background: rgba(30, 30, 30, 0.95); /* tmavší, sjednocené s tabulkou/menu */
+  margin: 5px;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Montserrat', Arial, sans-serif; /* sjednocený font */
+}
+
+h2 {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 32px;
+  color: rgb(249, 249, 249);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.contaainer {
+  margin-left: 150px;
+
+}
+
+h3 {
+
+   font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 16px;
+  color: rgb(249, 249, 249);
+  margin-left: 20px auto;
+   letter-spacing: 1.2px;
+  text-align: left
+  }
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: flex-start;
+  max-width: none;
+  width: 100%;
+  align-content: flex-start;
+  margin-left: 70px;
+}
+
+.thumb {
+  width: 150px;
+  margin: 5px;
+  cursor: pointer;
+  border: 2px solid rgb(107, 73, 9); /* oranžovo-hnědý rámeček */
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.thumb:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 165, 0, 0.6);
+}
+
+.gallery img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 30, 30, 0.95); /* tmavší pozadí */
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 165, 0, 0.7);
+}
+
+#lightbox span {
+  position: absolute;
+  top: 50%;
+  font-size: 3rem;
+  color: rgb(249, 249, 249);
+  cursor: pointer;
+  user-select: none;
+  padding: 1rem;
+  transform: translateY(-50%);
+  transition: color 0.3s ease;
+}
+
+#lightbox-prev {
+  left: 30px;
+}
+
+#lightbox-next {
+  right: 30px;
+}
+
+#lightbox span:hover {
+  color: orange;
+}
+
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  justify-content: flex-start;
+  width: 100%;
+  margin: 0 auto;
+}
+
+nav {
+    position: fixed;
+    top: 45px;
+    left: 20px;
+    width: 120px;
+    background-color: rgba(30, 30, 30, 0.95);
+    border: 2px solid rgb(107, 73, 9);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.2);
+    padding: 10px 5px;
+    font-family: 'Montserrat', Arial, sans-serif;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 8px 0;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    background-color: rgb(107, 73, 9);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background-color: orange;
+    color: rgb(30, 30, 30);
+    outline: none;
+}
