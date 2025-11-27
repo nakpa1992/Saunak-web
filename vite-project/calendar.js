@@ -52,8 +52,15 @@ let selected = null;
       tdSlots.appendChild(btn);
     });
 
-    tr.appendChild(tdSlots);
-    calendarBody.appendChild(tr);
+   // 1) Den
+tr.appendChild(tdDay);
+
+// 2) Časové sloty
+tr.appendChild(tdSlots);
+
+// 3) Přidat řádek do tabulky
+calendarBody.appendChild(tr);
+
   });
 }
 
