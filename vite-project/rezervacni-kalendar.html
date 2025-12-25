@@ -22,7 +22,38 @@
     </tbody>
   </table>
 
-  <script src="./calendar.js"></script>
+  <!--Formular-->
+
+  <div id="reservation-overlay" class="overlay hidden">
+  <div id="reservation-form" class="modal">
+    <h3>Potvrzení rezervace</h3>
+
+    <p id="reservation-info" class="info"></p>
+
+    <label>
+      Jméno
+      <input type="text" id="res-name" placeholder="Jan Novák">
+    </label>
+
+    <label>
+      Telefon
+      <input type="text" id="res-phone" placeholder="+420 123 456 789">
+    </label>
+
+    <div class="actions">
+      <button id="confirm-reservation" class="btn primary">
+        Potvrdit
+      </button>
+      <button id="cancel-reservation" class="btn secondary">
+        Zrušit
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<script src="./calendar.js" defer></script>
+
 </body>
 </html>
 

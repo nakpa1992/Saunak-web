@@ -1,62 +1,39 @@
-body
-
-
-   table {
-      width: 100%;
-      border-collapse: collapse;
-      font-family: Arial, sans-serif;
-    }
-    th, td {
-      padding: 8px;
-      border: 1px solid #ccc;
-      text-align: left;
-    }
-    button {
-      margin-right: 8px;
-      padding: 6px 12px;
-      cursor: pointer;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      background-color: #b7c1aa;
-    }
-    button.selected {
-      background-color: #608261;
-      color: rgb(174, 148, 148);
-    }
-
-    body {
+/* =========================
+   ZÁKLAD
+========================= */
+body {
   background-color: rgba(0, 0, 0, 0.861);
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
+/* =========================
+   NADPIS
+========================= */
 h1 {
-  font-family: 'Montserrat', Arial, sans-serif;
   font-size: 32px;
   color: rgb(249, 249, 249);
-  margin-bottom: 20px;
+  margin: 30px 0 20px;
   text-transform: uppercase;
   letter-spacing: 1.2px;
   text-align: center;
 }
 
+/* =========================
+   TABULKA KALENDÁŘE
+========================= */
 table.calendar {
-  top: 45px;
   width: 70%;
   margin: 50px auto;
   border-collapse: collapse;
-
-  /* Vzhled boxu */
   background: rgba(40, 40, 40, 0.75);
   backdrop-filter: blur(5px);
   color: rgb(240, 240, 240);
-
-  border: 1px solid rgba(255, 165, 0, 0.3);
   border-radius: 12px;
-
-  /* Jemnější a modernější stín */
+  overflow: hidden;
   box-shadow: 0 8px 25px rgba(255, 165, 0, 0.15);
-
-  font-family: 'Montserrat', Arial, sans-serif;
-  overflow: hidden; /* zakulatí rohy i u dětí */
+  border: 1px solid rgba(255, 165, 0, 0.3);
 }
 
 table.calendar th,
@@ -82,25 +59,155 @@ table.calendar tr:hover {
   transition: background-color 0.3s ease;
 }
 
+/* =========================
+   TLAČÍTKA SLOTŮ
+========================= */
 button {
-  margin: 0 5px;
-  padding: 6px 12px;
+  margin: 5px;
+  padding: 8px 14px;
   cursor: pointer;
   border: 1px solid rgb(107, 73, 9);
-  border-radius: 4px;
+  border-radius: 6px;
   background-color: #eee;
-  font-family: 'Montserrat', Arial, sans-serif;
   font-weight: 600;
   color: rgb(30, 30, 30);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: all 0.25s ease;
 }
 
 button:hover {
   background-color: rgb(255, 165, 0);
-  color: rgb(30, 30, 30);
 }
 
-button.selected {
-  background-color: rgb(107, 73, 9);
+button.reserved {
+  background: #aaa;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* =========================
+   MODAL OVERLAY
+========================= */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.hidden {
+  display: none;
+}
+
+/* =========================
+   MODAL OKNO
+========================= */
+.modal {
+  background: white;
+  border-radius: 14px;
+  width: 90%;
+  max-width: 420px;
+  padding: 25px 28px;
+  box-shadow: 0 12px 45px rgba(0, 0, 0, 0.35);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal h3 {
+  margin: 0 0 12px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.info {
+  background: #f4f4f4;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* =========================
+   INPUTY
+========================= */
+.modal label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.modal input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.modal input:focus {
+  outline: none;
+  border-color: rgb(107, 73, 9);
+}
+
+/* =========================
+   TLAČÍTKA VE FORMULÁŘI
+========================= */
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.actions button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.actions .primary {
+  background: rgb(107, 73, 9);
   color: white;
 }
+
+.actions .primary:hover {
+  background: rgb(140, 95, 20);
+}
+
+.actions .secondary {
+  background: #ddd;
+}
+
+.actions .secondary:hover {
+  background: #ccc;
+}
+
+/* =========================
+   ANIMACE
+========================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* =========================
+   MOBIL
+========================= */
+@media (max-width: 768px) {
+  table.calendar {
+    width: 95%;
+  }
+}
+
+
