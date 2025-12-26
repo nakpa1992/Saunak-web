@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rezervační kalendář sauny</title>
+  <link rel="stylesheet" href="../css/rezervacni-kalendar.css" />
+ 
+</head>
+<body>
+
+  
+      <nav class="animate__animated animate__fadeInLeft">
+            <ul>
+                <li><a href="./index.html">Domů</a></li>
+                <li><a href="./cenik.html">Ceník</a></li>
+                <li><a href="./rezervacni-kalendar.html">Rezervační kalendář</a></li>
+                <li><a href="./gallery.html">Galerie</a></li>
+            </ul>
+          </nav>
+        
+        
+        
+  <h1>Rezervační kalendář sauny</h1>
+
+  <table class="calendar">
+    <thead>
+      <tr>
+        <th>Den</th>
+        <th>Časové sloty</th>
+      </tr>
+    </thead>
+    <tbody id="calendar-body">
+      <!-- Tady vložit dny a časové sloty skriptem -->
+    </tbody>
+  </table>
+
+  <!--Formular-->
+
+  <div id="reservation-overlay" class="overlay hidden">
+  <div id="reservation-form" class="modal">
+    <h3>Potvrzení rezervace</h3>
+
+    <p id="reservation-info" class="info"></p>
+
+    <label>
+      Jméno
+      <input type="text" id="res-name" placeholder="Jan Novák">
+    </label>
+
+    <label>
+      Telefon
+      <input type="text" id="res-phone" placeholder="+420 123 456 789">
+    </label>
+
+    <div class="actions">
+      <button id="confirm-reservation" class="btn primary">
+        Potvrdit
+      </button>
+      <button id="cancel-reservation" class="btn secondary">
+        Zrušit
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<script src="./js/calendar.js"></script>
+
+</body>
+</html>
+
